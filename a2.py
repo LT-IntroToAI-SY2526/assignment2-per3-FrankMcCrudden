@@ -27,7 +27,7 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
         # you should delete the following line
 
         # 1) if we reached the end of the pattern but not source
-        if pind == len(pattern) and sind < len(sind):
+        if pind == len(pattern) and sind < len(source):
             print("End of pattern, but not source")
             return None
         
@@ -42,7 +42,14 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
                 print (result)
                 return result
             else:
-                pass
+                pind += 1
+                accum = ""
+                while pattern[pind] != source[sind]:
+                    accum += source[sind] + " "
+                    sind += 1
+                    if sind == len(source):
+                        return None
+                result.append(accum.strip())
         # 3) if we reached the end of the source but not the pattern
         elif sind == len(source):
             print("End of source, but not pattern")
@@ -64,7 +71,7 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
         # indicates the current thing it pattern doesn't match the current thing in
         # source
         else:
-            print(pattern[pind], source[sind])
+            print(pattern[pind] + " " + source[sind])
             print("End of assert, return none")
             return None
     print("End of assert, return list")
