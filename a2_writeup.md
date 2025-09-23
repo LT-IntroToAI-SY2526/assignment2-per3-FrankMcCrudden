@@ -12,9 +12,9 @@ This assignment is about learning and applying the while loop and iterating thro
 
 ## Reflection Questions
 1. What was difficult for you while completing the match function?
-
+The most difficult thing for me to do was following pind and sind throughout the pattern. 
 
 
 2. Explain how you could use the match function for extracting information from a movie database.
-
+It can identify certain elements present within an user inputed statement and can tell what the program needs to use.
 
